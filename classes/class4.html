@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Js Examples - Classes</title>
+</head>
+<body>
+<a href="../index.html">Voltar</a>
+<script type="text/javascript">
+    class JsDay {
+        constructor (){
+            this.programacao = {
+                'Workshop de Javascript': {data: '23/07/2016', listaDeAlunos: []}
+            };
+        }
+
+        cadastrarTurma (evento, listaDeAlunos){
+            this.programacao[evento]['listaDeAlunos'] = listaDeAlunos;
+        }
+    }
+
+    class JsWorkshop extends JsDay {
+        constructor (listaDeAlunos) {
+            super(); // === new JsDay
+            this.listaDeAlunos = listaDeAlunos;
+            this.cadastrarTurma();
+        }
+
+        cadastrarTurma(){
+            super.cadastrarTurma('Workshop de Javascript', this.listaDeAlunos);
+        }
+    }
+
+    var jsWorkshop = new JsWorkshop([
+        {nome: "Thiago Mascarenhas", email: "thiago_si@ymail.com"}
+    ]);
+    console.log(jsWorkshop);
+</script>
+</body>
+</html>

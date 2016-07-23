@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Js Examples - Classes</title>
+</head>
+<body>
+<a href="../index.html">Voltar</a>
+<script type="text/javascript">
+    // Convencional
+    class JsWorkshop {
+        constructor (listaDeAlunos) {
+            this.listaDeAlunos = listaDeAlunos;
+        }
+    }
+
+    var jsWorkshop = new JsWorkshop([
+        {nome: "Thiago Mascarenhas", email: "thiago_si@ymail.com"}
+    ]);
+    console.log(jsWorkshop);
+
+    // Nomeada
+    var jsWorkshop = class JsWorkshop {
+        constructor (listaDeAlunos) {
+            this.listaDeAlunos = listaDeAlunos;
+        }
+    };
+    console.log(jsWorkshop);
+
+    // Anônima
+    var jsWorkshop = class {
+        constructor (listaDeAlunos) {
+            this.listaDeAlunos = listaDeAlunos;
+        }
+    };
+    console.log(jsWorkshop);
+</script>
+</body>
+</html>
